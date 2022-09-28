@@ -1,0 +1,5 @@
+# Only a tiny tool, the package is primarily a library
+python3-cherrypy3: application-in-library-section python usr/bin/cherryd3
+python3-cherrypy3: library-package-name-for-application usr/bin/cherryd3
+# Legit subdirectory within cherrypy
+python3-cherrypy3: repeated-path-segment lib usr/lib/python3/dist-packages/cherrypy/lib/

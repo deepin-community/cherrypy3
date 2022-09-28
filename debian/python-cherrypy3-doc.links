@@ -1,0 +1,8 @@
+/usr/share/doc/python-cherrypy3-doc/html/_sources/	/usr/share/doc/python-cherrypy3-doc/rst
+/usr/share/doc/python-cherrypy3-doc/html		/usr/share/doc/python3-cherrypy3/html
+/usr/share/doc/python-cherrypy3-doc/html/_sources/	/usr/share/doc/python3-cherrypy3/rst
+/usr/share/doc/python-cherrypy3-doc/tutorial		/usr/share/doc/python3-cherrypy3/tutorial
+# Avoid installing duplicate images
+/usr/share/doc/python-cherrypy3-doc/html/_static/images/cpreturn.gif	/usr/share/doc/python-cherrypy3-doc/html/_images/cpreturn.gif
+/usr/share/doc/python-cherrypy3-doc/html/_static/images/cpyield.gif	/usr/share/doc/python-cherrypy3-doc/html/_images/cpyield.gif
+/usr/share/doc/python-cherrypy3-doc/html/_static/images/sushibelt.JPG	/usr/share/doc/python-cherrypy3-doc/html/_images/sushibelt.JPG

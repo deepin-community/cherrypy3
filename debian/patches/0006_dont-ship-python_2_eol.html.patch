@@ -1,0 +1,16 @@
+# Exclude python_2_eol from docs
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -171,10 +171,10 @@
+ # Custom sidebar templates, maps document names to template names.
+ html_sidebars = {
+     'index': [
+-        'about.html', 'searchbox.html', 'navigation.html', 'python_2_eol.html',
++        'about.html', 'searchbox.html', 'navigation.html',
+     ],
+     '**': [
+-        'about.html', 'searchbox.html', 'navigation.html', 'python_2_eol.html',
++        'about.html', 'searchbox.html', 'navigation.html',
+     ],
+ }
+ 

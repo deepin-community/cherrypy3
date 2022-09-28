@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=cherrypy3
+export PYBUILD_INSTALL_ARGS=--no-compile
+export PYBUILD_BEFORE_TEST=cp -va cherrypy "{build_dir}/"
+export PYBUILD_AFTER_TEST=rm -vrf "{build_dir}/cherrypy"
+# Disable some of the tests, see d/tests/upstream-testsuite for rationale
+export PYBUILD_TEST_ARGS=cherrypy/test -k "not (testCombinedTools or test_4_Autoreload or MemcachedSessionTest)"
+
+%:
+	dh $@ --buildsystem pybuild --with python3,sphinxdoc
+
+override_dh_auto_test:
+	# Clear the http_proxy variable to prevent it from affecting the testsuite
+	http_proxy= dh_auto_test
+
+execute_before_dh_auto_build:
+	cp -va man/cherryd.1 debian/cherryd3.1
+
+override_dh_install:
+	# Content of html/_images is linked instead, to prevent installing duplicate files
+	dh_install \
+		--exclude=LICENSE.md \
+		--exclude=python-cherrypy3-doc/html/_images/
+
+execute_after_dh_install:
+	# Make python 2&3 cherrypy3 co-installable:
+	mv debian/python3-cherrypy3/usr/bin/cherryd debian/python3-cherrypy3/usr/bin/cherryd3
+	# Only install tutorial and scaffold in the -doc package:
+	rm -vrf debian/python*-cherrypy3/usr/lib/python*/dist-packages/cherrypy/tutorial \
+		debian/python*-cherrypy3/usr/lib/python*/dist-packages/cherrypy/scaffold
+
+override_dh_compress:
+	dh_compress -X.py -X.pdf
+
+execute_before_dh_sphinxdoc:
+	http_proxy='http://127.0.0.1:9/' PYTHONPATH=. \
+		/usr/share/sphinx/scripts/python3/sphinx-build -N -q -E -b html docs/ \
+		debian/python-cherrypy3-doc/usr/share/doc/python-cherrypy3-doc/html/

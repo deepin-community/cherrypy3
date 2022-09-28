@@ -1,0 +1,119 @@
+# Apostrophes don't need escaping in groff: doing so anyway
+# causes them to be rendered as an acute accent.
+
+--- cherrypy3-18.6.0.orig/man/cherryd.1
++++ cherrypy3-18.6.0/man/cherryd.1
+@@ -75,7 +75,7 @@ Start a scgi server instead of the defau
+ .BI \-i\  MODULE_NAME ,\ \-\-import\fn= MODULE_NAME
+ Specifies a module to import.  This option may be specified multiple times.
+ For each MODULE_NAME specified, \fBcherryd\fP will import the module.  This
+-is how you tell \fBcherryd\fP to run your application\'s startup code.
++is how you tell \fBcherryd\fP to run your application's startup code.
+ For all practical purposes, \fB\-i\fP is not optional; you will always need to
+ specify at least one module.
+ 
+@@ -122,15 +122,15 @@ import cherrypy
+ .br
+ import my_controller
+ .br
+-cherrypy.log.error_file = \'/var/tmp/myapp\-error.log\'
++cherrypy.log.error_file = \(aq/var/tmp/myapp\-error.log'
+ .br
+-cherrypy.log.access_file = \'/var/tmp/myapp\-access.log\'
++cherrypy.log.access_file = \(aq/var/tmp/myapp\-access.log'
+ .br
+-config_root = { \'tools.encode.encoding\' : \'utf\-8\', }
++config_root = { \(aqtools.encode.encoding' : \(aqutf\-8', }
+ .br
+-app_conf = { \'/\' : config_root }
++app_conf = { \(aq/' : config_root }
+ .br
+-cherrypy.tree.mount(my_controller.Root(), script_name=\'\', config=app_conf)
++cherrypy.tree.mount(my_controller.Root(), script_name=\(aq', config=app_conf)
+ .br
+ 
+ .UNINDENT
+@@ -161,7 +161,7 @@ substituting appropriate values for \fBu
+ 
+ from cherrypy.process.plugins import DropPrivileges
+ .br
+-DropPrivileges(cherrypy.engine, umask=022, uid=\'nobody\', gid=\'nogroup\').subscribe()
++DropPrivileges(cherrypy.engine, umask=022, uid=\(aqnobody', gid=\(aqnogroup').subscribe()
+ .br
+ 
+ .UNINDENT
+@@ -184,15 +184,15 @@ These are the built\-in environment conf
+ .INDENT 0.0
+ .INDENT 3.5
+ 
+-\'engine.autoreload.on\': False,
++\(aqengine.autoreload.on': False,
+ .br
+-\'checker.on\': False,
++\(aqchecker.on': False,
+ .br
+-\'tools.log_headers.on\': False,
++\(aqtools.log_headers.on': False,
+ .br
+-\'request.show_tracebacks\': False,
++\(aqrequest.show_tracebacks': False,
+ .br
+-\'request.show_mismatched_params\': False,
++\(aqrequest.show_mismatched_params': False,
+ .br
+ 
+ .UNINDENT
+@@ -202,17 +202,17 @@ These are the built\-in environment conf
+ .INDENT 0.0
+ .INDENT 3.5
+ 
+-\'engine.autoreload_on\': False,
++\(aqengine.autoreload_on': False,
+ .br
+-\'checker.on\': False,
++\(aqchecker.on': False,
+ .br
+-\'tools.log_headers.on\': False,
++\(aqtools.log_headers.on': False,
+ .br
+-\'request.show_tracebacks\': False,
++\(aqrequest.show_tracebacks': False,
+ .br
+-\'request.show_mismatched_params\': False,
++\(aqrequest.show_mismatched_params': False,
+ .br
+-\'log.screen\': False,
++\(aqlog.screen': False,
+ .br
+ 
+ .UNINDENT
+@@ -224,21 +224,21 @@ These are the built\-in environment conf
+ 
+ # For use with CherryPy embedded in another deployment stack, e.g. Apache mod_wsgi.
+ .br
+-\'engine.autoreload_on\': False,
++\(aqengine.autoreload_on': False,
+ .br
+-\'checker.on\': False,
++\(aqchecker.on': False,
+ .br
+-\'tools.log_headers.on\': False,
++\(aqtools.log_headers.on': False,
+ .br
+-\'request.show_tracebacks\': False,
++\(aqrequest.show_tracebacks': False,
+ .br
+-\'request.show_mismatched_params\': False,
++\(aqrequest.show_mismatched_params': False,
+ .br
+-\'log.screen\': False,
++\(aqlog.screen': False,
+ .br
+-\'engine.SIGHUP\': None,
++\(aqengine.SIGHUP': None,
+ .br
+-\'engine.SIGTERM\': None,
++\(aqengine.SIGTERM': None,
+ .br
+ 
+ .UNINDENT

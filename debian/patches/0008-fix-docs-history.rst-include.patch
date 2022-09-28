@@ -1,0 +1,9 @@
+# Correct the include to point to an existing file
+--- a/docs/history.rst
++++ b/docs/history.rst
+@@ -3,4 +3,4 @@
+ History
+ =======
+ 
+-.. include:: ../CHANGES (links).rst
++.. include:: ../CHANGES.rst

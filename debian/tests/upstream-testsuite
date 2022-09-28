@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e -u
+
+# Add a symlink to the tutorial in the -doc package
+ln -vs /usr/share/doc/python-cherrypy3-doc/tutorial /usr/lib/python3/dist-packages/cherrypy/
+cp -va cherrypy/favicon.ico cherrypy/test "$AUTOPKGTEST_TMP"/
+
+for py in $(py3versions -s 2>/dev/null); do
+        cd "$AUTOPKGTEST_TMP"
+        echo "Running upstream testsuite with $py:"
+	# Disable some broken tests:
+	#	testCombinedTools: https://github.com/cherrypy/cherrypy/issues/1849
+	#	test_4_Autoreload: https://github.com/cherrypy/cherrypy/issues/1693
+	#	MemcachedSessionTest: problems running memcached on salsa-ci
+        http_proxy= $py -m pytest test -k 'not (testCombinedTools or test_4_Autoreload or MemcachedSessionTest)'
+done

@@ -1,0 +1,8 @@
+Tests: upstream-testsuite
+Depends: @,
+ python3-all,
+ python3-mock,
+ python3-path,
+ python3-pytest,
+ python3-requests-toolbelt
+Restrictions: isolation-container, needs-root, allow-stderr

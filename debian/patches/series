@@ -1,0 +1,7 @@
+0001-disable-sphinx-rst.linker-extension.patch
+0003-disable-test_antistampede.patch
+0006_dont-ship-python_2_eol.html.patch
+0007-drop-pytest-cov-options.patch
+0008-fix-docs-history.rst-include.patch
+0009-disable-privacy-breaches.patch
+0010-fix-apostrophe-in-man-page.patch

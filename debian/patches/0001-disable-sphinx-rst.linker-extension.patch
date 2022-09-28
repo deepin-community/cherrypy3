@@ -1,0 +1,23 @@
+From 752d360040428d9e014710912dbcebd48913f7a7 Mon Sep 17 00:00:00 2001
+From: Carl Suster <carl@contraflo.ws>
+Date: Wed, 4 Jan 2017 16:34:49 +1100
+Subject: disable sphinx rst.linker extension
+
+This is not yet packaged in Debian and is harmless to ignore for now.
+
+2021/03 extended by jcfp to also disable jaraco.packaging.sphinx.
+---
+ docs/conf.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -90,8 +90,6 @@
+ 
+     # Third-party extensions:
+     'sphinxcontrib.apidoc',
+-    'rst.linker',
+-    'jaraco.packaging.sphinx',
+ ]
+ 
+ extlinks = {
