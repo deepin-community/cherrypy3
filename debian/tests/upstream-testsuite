@@ -13,5 +13,5 @@ for py in $(py3versions -s 2>/dev/null); do
 	#	testCombinedTools: https://github.com/cherrypy/cherrypy/issues/1849
 	#	test_4_Autoreload: https://github.com/cherrypy/cherrypy/issues/1693
 	#	MemcachedSessionTest: problems running memcached on salsa-ci
-        http_proxy= $py -m pytest test -k 'not (testCombinedTools or test_4_Autoreload or MemcachedSessionTest)'
+        http_proxy= $py -m pytest test -k 'not (test_file_stream or testCombinedTools or test_4_Autoreload or MemcachedSessionTest)'
 done

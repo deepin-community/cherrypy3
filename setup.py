@@ -14,7 +14,7 @@ params = dict(
     use_scm_version=True,
     description='Object-Oriented HTTP framework',
     author='CherryPy Team',
-    author_email='team@cherrypy.org',
+    author_email='team@cherrypy.dev',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
@@ -25,10 +25,6 @@ params = dict(
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: Implementation',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: Jython',
@@ -41,12 +37,12 @@ params = dict(
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Server',
         'Topic :: Software Development :: Libraries :: Application Frameworks',
     ],
-    url='https://www.cherrypy.org',
+    url='https://www.cherrypy.dev',
     project_urls={
         'CI: AppVeyor': 'https://ci.appveyor.com/project/{}'.format(repo_slug),
         'CI: Travis': 'https://travis-ci.org/{}'.format(repo_slug),
         'CI: Circle': 'https://circleci.com/gh/{}'.format(repo_slug),
-        'Docs: RTD': 'https://docs.cherrypy.org',
+        'Docs: RTD': 'https://docs.cherrypy.dev',
         'GitHub: issues': '{}/issues'.format(repo_url),
         'GitHub: repo': repo_url,
         'Tidelift: funding':
@@ -101,7 +97,7 @@ params = dict(
         'memcached_session': ['python-memcached>=1.58'],
         'xcgi': ['flup'],
 
-        # https://docs.cherrypy.org/en/latest/advanced.html?highlight=windows#windows-console-events
+        # https://docs.cherrypy.dev/en/latest/advanced.html?highlight=windows#windows-console-events
         ':sys_platform == "win32" and implementation_name == "cpython"'
         # pywin32 disabled while a build is unavailable. Ref #1920.
         ' and python_version < "3.10"': [
@@ -111,7 +107,7 @@ params = dict(
     setup_requires=[
         'setuptools_scm',
     ],
-    python_requires='>=3.5',
+    python_requires='>=3.6',
 )
 
 

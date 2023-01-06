@@ -1,10 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: CherryPy
-Upstream-Contact: CherryPy Team <team@cherrypy.org>
+Upstream-Contact: CherryPy Team <team@cherrypy.dev>
 Source: https://github.com/cherrypy/cherrypy
 
 Files: *
-Copyright: 2004-2019, CherryPy Team <team@cherrypy.org>
+Copyright: 2004-2019, CherryPy Team <team@cherrypy.dev>
 License: BSD-3-clause
 
 Files: man/cherryd.1
@@ -16,7 +16,7 @@ Files: debian/*
 Copyright:
  2005, Gustavo Noronha Silva <kov@debian.org>
  2016, Carl Suster <carl@contraflo.ws>
- 2021, Jeroen Ploemen <jcfp@debian.org>
+ 2021-2022, Jeroen Ploemen <jcfp@debian.org>
 License: BSD-3-clause
 
 License: BSD-3-clause

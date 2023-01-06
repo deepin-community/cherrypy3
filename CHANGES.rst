@@ -1,3 +1,18 @@
+v18.8.0
+-------
+
+* :issue:`1974`: Dangerous characters received in a host header
+  encoded using RFC 2047 are now elided by default. Currently,
+  dangerous characters are defined as CR and LF. The original
+  value is still available as ``cherrypy.request.headers['Host'].raw``
+  if needed.
+
+v18.7.0
+-------
+
+* :pr:`1923`: Drop support for Python 3.5.
+* :pr:`1945`: Fixed compatibility on Python 3.11.
+
 v18.6.1
 -------
 
