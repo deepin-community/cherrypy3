@@ -5,3 +5,5 @@
 0008-fix-docs-history.rst-include.patch
 0009-disable-privacy-breaches.patch
 0010-fix-apostrophe-in-man-page.patch
+0012-permit-deprecation-warnings-in-testsuite.patch
+0013_dirty_hack_for_docs_build_failure.patch

@@ -1,3 +1,7 @@
+.. image:: https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg
+   :target: https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md
+   :alt: SWUbanner
+
 .. image:: https://img.shields.io/pypi/v/cherrypy.svg
    :target: https://pypi.org/project/cherrypy
 
@@ -14,7 +18,7 @@
 
 
 .. image:: https://readthedocs.org/projects/cherrypy/badge/?version=latest
-  :target: https://docs.cherrypy.org/en/latest/?badge=latest
+  :target: https://docs.cherrypy.dev/en/latest/?badge=latest
 
 .. image:: https://img.shields.io/badge/StackOverflow-CherryPy-blue.svg
    :target: https://stackoverflow.com/questions/tagged/cheroot+or+cherrypy
@@ -51,7 +55,7 @@
    :target: https://codecov.io/gh/cherrypy/cherrypy
    :alt: codecov
 
-Welcome to the GitHub repository of `CherryPy <https://cherrypy.org/>`_!
+Welcome to the GitHub repository of `CherryPy <https://cherrypy.dev>`_!
 
 CherryPy is a pythonic, object-oriented HTTP framework.
 
@@ -84,7 +88,7 @@ and/or API.
 
 While CherryPy is one of the easiest and most intuitive frameworks out
 there, the prerequisite for understanding the `CherryPy
-documentation <https://docs.cherrypy.org/en/latest/>`_ is that you have
+documentation <https://docs.cherrypy.dev>`_ is that you have
 a general understanding of Python and web development.
 Additionally:
 
@@ -95,7 +99,7 @@ Additionally:
 
 If the docs are insufficient to address your needs, the CherryPy
 community has several `avenues for support
-<https://docs.cherrypy.org/en/latest/support.html>`_.
+<https://docs.cherrypy.dev/en/latest/support.html>`_.
 
 For Enterprise
 --------------
@@ -112,6 +116,6 @@ Contributing
 ------------
 
 Please follow the `contribution guidelines
-<https://docs.cherrypy.org/en/latest/contribute.html>`_.
+<https://docs.cherrypy.dev/en/latest/contribute.html>`_.
 And by all means, absorb the `Zen of
 CherryPy <https://github.com/cherrypy/cherrypy/wiki/The-Zen-of-CherryPy>`_.

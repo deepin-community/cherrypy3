@@ -25,6 +25,7 @@ tox.ini
 .github/PULL_REQUEST_TEMPLATE.md
 .github/SUPPORT.rst
 .github/config.yml
+.github/patchback.yml
 .test-results/pytest/.gitignore
 CherryPy.egg-info/PKG-INFO
 CherryPy.egg-info/SOURCES.txt

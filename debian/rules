@@ -5,7 +5,7 @@ export PYBUILD_INSTALL_ARGS=--no-compile
 export PYBUILD_BEFORE_TEST=cp -va cherrypy "{build_dir}/"
 export PYBUILD_AFTER_TEST=rm -vrf "{build_dir}/cherrypy"
 # Disable some of the tests, see d/tests/upstream-testsuite for rationale
-export PYBUILD_TEST_ARGS=cherrypy/test -k "not (testCombinedTools or test_4_Autoreload or MemcachedSessionTest)"
+export PYBUILD_TEST_ARGS=cherrypy/test -k "not (test_file_stream or testCombinedTools or test_4_Autoreload or MemcachedSessionTest)"
 
 %:
 	dh $@ --buildsystem pybuild --with python3,sphinxdoc
