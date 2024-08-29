@@ -1,8 +1,10 @@
+# yamllint disable rule:line-length
+---
+
 environment:
   matrix:
   - PYTHON: "C:\\Python37-x64"
   - PYTHON: "C:\\Python36-x64"
-  - PYTHON: "C:\\Python35-x64"
 
 init:
 - "chcp 65001"
@@ -39,11 +41,7 @@ on_finish:
     $wc = New-Object 'System.Net.WebClient'
     $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\.test-results\pytest\results.xml))
 
-#deploy_script:
-#- ps: >-
-#    if($env:appveyor_repo_tag -eq 'True') {
-#        Invoke-Expression "python -m twine upload dist/* --username $env:PYPI_USERNAME --password $env:PYPI_PASSWORD"
-#    }
-
 artifacts:
 - path: dist\*
+
+...

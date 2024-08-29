@@ -1,8 +1,11 @@
 Tests: upstream-testsuite
 Depends: @,
  python3-all,
- python3-mock,
+ python3-objgraph,
  python3-path,
  python3-pytest,
- python3-requests-toolbelt
+ python3-requests-toolbelt,
+ python3-routes,
+ # for distutils
+ python3-setuptools,
 Restrictions: isolation-container, needs-root, allow-stderr

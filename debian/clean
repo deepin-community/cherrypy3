@@ -6,3 +6,4 @@ cherrypy/test/**/*.log
 cherrypy/test/test.conf
 cherrypy/test/static/has*.html
 .test-results/*/*.xml
+docs/pkg/*.rst

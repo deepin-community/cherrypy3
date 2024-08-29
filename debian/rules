@@ -2,8 +2,12 @@
 
 export PYBUILD_NAME=cherrypy3
 export PYBUILD_INSTALL_ARGS=--no-compile
-export PYBUILD_BEFORE_TEST=cp -va cherrypy "{build_dir}/"
-export PYBUILD_AFTER_TEST=rm -vrf "{build_dir}/cherrypy"
+export PYBUILD_BEFORE_TEST=cp -vR --no-preserve=mode cherrypy "{build_dir}/"
+export PYBUILD_AFTER_TEST=rm -vrf \
+	"{build_dir}"/cherrypy/test/*.log \
+	"{build_dir}"/cherrypy/test/*.conf \
+	"{build_dir}"/cherrypy/test/*.pem \
+	"{build_dir}"/cherrypy/test/static
 # Disable some of the tests, see d/tests/upstream-testsuite for rationale
 export PYBUILD_TEST_ARGS=cherrypy/test -k "not (test_file_stream or testCombinedTools or test_4_Autoreload or MemcachedSessionTest)"
 
