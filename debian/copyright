@@ -16,7 +16,7 @@ Files: debian/*
 Copyright:
  2005, Gustavo Noronha Silva <kov@debian.org>
  2016, Carl Suster <carl@contraflo.ws>
- 2021-2022, Jeroen Ploemen <jcfp@debian.org>
+ 2021-2023, Jeroen Ploemen <jcfp@debian.org>
 License: BSD-3-clause
 
 License: BSD-3-clause

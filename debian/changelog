@@ -1,3 +1,45 @@
+cherrypy3 (18.9.0-2) unstable; urgency=medium
+
+  * Demote the dependency on python3-objgraph from recommended to
+    suggested. (Closes: #1060041)
+
+ -- Jeroen Ploemen <jcfp@debian.org>  Fri, 05 Jan 2024 09:25:47 +0000
+
+cherrypy3 (18.9.0-1) unstable; urgency=medium
+
+  * New upstream version 18.9.0
+  * Patches: remove 0013, 0014, 0015; merged upstream.
+  * Control: add build-deps on python3-objgraph, python3-routes,
+    python3-simplejson, and pybuild-plugin-pyproject.
+  * Rules: modify pybuild after test handling to avoid installing logs
+    and similar files generated during the on-build test run.
+  * Tests: update deps to match changes to build-deps.
+  * Control: remove build-dep on python3-mock.
+  * Tests: add depend on setuptools, needed for distutils in
+    test/test_session.py.
+  * Control: mark assorted build-deps !nocheck resp. !nodoc.
+  * Control: add recommended dep on python3-objgraph, optional import in
+    cherrypy/lib/gctools.py.
+
+ -- Jeroen Ploemen <jcfp@debian.org>  Fri, 15 Dec 2023 10:10:02 +0000
+
+cherrypy3 (18.8.0-4) unstable; urgency=medium
+
+  * Clean: add docs/pkg/*.rst. (Closes: #1043848)
+  * Patches: add 0015 to ensure compatibility with Python 3.12.
+
+ -- Jeroen Ploemen <jcfp@debian.org>  Wed, 08 Nov 2023 09:53:54 +0000
+
+cherrypy3 (18.8.0-3) unstable; urgency=medium
+
+  * Patches: add 0014, backport of upstream commit to add sphinx6
+    compatibility. (Closes: #1042644)
+  * Control: bump Standards-Version to 4.6.2 (from 4.6.1; no further
+    changes).
+  * Lintian: compensate for changes in override format.
+
+ -- Jeroen Ploemen <jcfp@debian.org>  Wed, 09 Aug 2023 12:21:55 +0000
+
 cherrypy3 (18.8.0-2) unstable; urgency=medium
 
   [ Debian Janitor ]

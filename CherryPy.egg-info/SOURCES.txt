@@ -12,8 +12,10 @@
 CHANGES.rst
 LICENSE.md
 README.rst
+SECURITY.md
 bindep.txt
 conftest.py
+pyproject.toml
 pytest.ini
 setup.cfg
 setup.py
@@ -26,6 +28,7 @@ tox.ini
 .github/SUPPORT.rst
 .github/config.yml
 .github/patchback.yml
+.github/workflows/ci-cd.yml
 .test-results/pytest/.gitignore
 CherryPy.egg-info/PKG-INFO
 CherryPy.egg-info/SOURCES.txt
@@ -180,6 +183,7 @@ docs/_static/images/sushibelt.JPG
 docs/_templates/python_2_eol.html
 docs/pkg/.gitignore
 man/cherryd.1
+requirements/tox-build-dists.in
 tests/dist-check.py
 visuals/cherrypy_logo_big.png
 visuals/cherrypy_logo_small.jpg

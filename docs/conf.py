@@ -35,7 +35,7 @@ def get_supported_pythons(classifiers):
     vers = filter(lambda c: c.startswith(PY_VER_CLASSIFIER), classifiers)
     vers = map(lambda c: c[len(PY_VER_CLASSIFIER):], vers)
     vers = filter(lambda c: c[0].isdigit() and '.' in c, vers)
-    vers = map(lambda c: tuple(c.split('.')), vers)
+    vers = map(lambda c: tuple(map(int, c.split('.'))), vers)
     vers = sorted(vers)
     del vers[1:-1]
     return vers
@@ -51,7 +51,7 @@ prj_license = prj_meta['License']
 prj_description = prj_meta['Description']
 prj_py_ver_range = get_supported_pythons(prj_meta.get_all('Classifier'))
 prj_py_min_supported, prj_py_max_supported = map(
-    lambda v: '.'.join(v), prj_py_ver_range
+    lambda v: '.'.join(map(str, v)), prj_py_ver_range
 )
 
 project = prj_dist.project_name
@@ -95,13 +95,13 @@ extensions = [
 ]
 
 extlinks = {
-    'issue': (f'{github_repo_url}/issues/%s', '#'),
-    'pr': (f'{github_repo_url}/pull/%s', 'PR #'),
-    'commit': (f'{github_repo_url}/commit/%s', ''),
-    'cr-issue': (f'{cr_github_repo_url}/issues/%s', 'Cheroot #'),
-    'cr-pr': (f'{cr_github_repo_url}/pull/%s', 'Cheroot PR #'),
-    'gh': (f'{github_url}/%s', 'GitHub: '),
-    'user': (f'{github_sponsors_url}/%s', '@'),
+    'issue': (f'{github_repo_url}/issues/%s', '#%s'),
+    'pr': (f'{github_repo_url}/pull/%s', 'PR #%s'),
+    'commit': (f'{github_repo_url}/commit/%s', '%s'),
+    'cr-issue': (f'{cr_github_repo_url}/issues/%s', 'Cheroot #%s'),
+    'cr-pr': (f'{cr_github_repo_url}/pull/%s', 'Cheroot PR #%s'),
+    'gh': (f'{github_url}/%s', 'GitHub: %s'),
+    'user': (f'{github_sponsors_url}/%s', '@%s'),
 }
 
 intersphinx_mapping = {
@@ -200,30 +200,6 @@ latex_documents = [
 ]
 
 
-def mock_pywin32():
-    """Mock pywin32 module.
-
-    Resulting in Linux hosts, including ReadTheDocs,
-    and other environments that don't have pywin32 can generate the docs
-    properly including the PDF version.
-    See:
-    http://read-the-docs.readthedocs.org/en/latest/faq.html#i-get-import-errors-on-libraries-that-depend-on-c-modules
-    """
-    if try_import('win32api'):
-        return
-
-    from unittest import mock
-
-    MOCK_MODULES = [
-        'win32api', 'win32con', 'win32event', 'win32service',
-        'win32serviceutil',
-    ]
-    for mod_name in MOCK_MODULES:
-        sys.modules[mod_name] = mock.MagicMock()
-
-
-mock_pywin32()
-
 link_files = {
     '../CHANGES.rst': dict(
         using=dict(
@@ -242,6 +218,17 @@ link_files = {
 # Ref: https://github.com/python-attrs/attrs/pull/571/files\
 #      #diff-85987f48f1258d9ee486e3191495582dR82
 default_role = 'any'
+
+
+# -- Options for autodoc extension ---------------------------------------
+
+autodoc_mock_imports = [
+    'win32api',
+    'win32con',
+    'win32event',
+    'win32service',
+    'win32serviceutil',
+]
 
 
 # -- Options for apidoc extension ----------------------------------------
